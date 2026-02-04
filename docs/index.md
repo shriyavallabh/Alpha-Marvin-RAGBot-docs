@@ -1,8 +1,16 @@
-# Alpha-Marvin-RAGBot
+# Alpha Marvin
 
-**Legal Document Intelligence Platform** — RAG-powered Q&A for legal PDFs using Claude Opus 4.5.
+**The AI Workspace for Turning Documents into Trusted Intelligence**
 
-Upload legal documents (contracts, case law, regulations, compliance docs), ask natural language questions, and get sourced answers with citations pointing back to specific document sections.
+> To be the trusted AI workspace where every document becomes a source of grounded truth, delivering intelligence with absolute clarity, accuracy, and integrity. Alpha Marvin envisions a future where professionals rely on autonomous intelligence to navigate complexity confidently, uphold compliance seamlessly, and make decisions rooted in trust.
+
+---
+
+## JurisAgent — Trusted Legal Intelligence, Grounded in Truth
+
+**Our mission** is to empower legal professionals with an agentic AI platform where they can securely upload documents, ask natural language questions, and receive grounded, citation-backed answers. JurisAgent is built with zero tolerance for hallucination, ensuring accuracy, transparency, and trust in every legal insight delivered.
+
+JurisAgent is the first product built on the Alpha Marvin platform, focused on legal document Q&A — contracts, case law, regulations, and compliance documents.
 
 ---
 
@@ -17,7 +25,7 @@ Upload legal documents (contracts, case law, regulations, compliance docs), ask 
 
 ### Architecture
 
-- [Reference Architecture](reference-architecture.md) — System design and component overview
+- [Reference Architecture](reference-architecture.md) — System design, tech stack, and component overview
 - [Chunking Strategies](chunking-strategies.md) — How legal documents are split for retrieval
 - [API Specification](api-spec.md) — Backend REST API reference
 

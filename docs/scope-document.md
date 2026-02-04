@@ -1,7 +1,7 @@
 # Beta Scope Document
 
-**Product:** Legal Document Intelligence Platform
-**Beta Version:** v0.1.0
+**Product:** Alpha Marvin / JurisAgent
+**Beta Version:** v0.1.0 (JurisAgent Basic)
 **Beta Date:** February 15, 2026
 **Prepared By:** Vallabh Pethkar
 

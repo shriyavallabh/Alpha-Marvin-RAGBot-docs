@@ -1,6 +1,6 @@
 # Feature Matrix
 
-**Product:** Legal Document Intelligence Platform
+**Product:** Alpha Marvin / JurisAgent
 **Last Updated:** February 4, 2026
 
 ---
@@ -188,10 +188,10 @@
 
 ## Pricing Tier Summary (Proposed)
 
-| Tier | Target User | Included | Estimated Price |
-|------|------------|----------|-----------------|
-| **Free / Self-Hosted** | Solo practitioners, developers | Core Q&A, upload, search, graph, grounding | Infrastructure cost only (~$60/mo) |
-| **Paid** | Small firms, teams (2-10 users) | Free + production agents, batch, analytics, SDK | TBD (target: $49-99/user/mo) |
-| **Enterprise** | Large firms, corporations | Paid + SSO, RBAC, audit logs, custom entities, DMS | TBD (custom pricing) |
+| Tier | Product | Target User | Included | Estimated Price |
+|------|---------|------------|----------|-----------------|
+| **JurisAgent Basic** | Self-hosted or cloud | Solo practitioners, developers | Core Q&A, upload, search, graph, grounding | Infrastructure cost only (~$60/mo) |
+| **JurisAgent Professional** | Cloud | Small firms, teams (2-10 users) | Basic + production agents, batch, analytics, collaboration | TBD (target: $49-99/user/mo) |
+| **JurisAgent Enterprise** | Cloud or on-prem | Large firms, corporations | Professional + SSO, RBAC, audit logs, custom compliance, DMS | TBD (custom pricing) |
 
 *Note: Pricing model (per user, per document, or flat rate) is a pending decision.*

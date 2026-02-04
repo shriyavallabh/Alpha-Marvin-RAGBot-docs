@@ -1,6 +1,6 @@
 # Use Case Catalog
 
-**Product:** Legal Document Intelligence Platform
+**Product:** Alpha Marvin / JurisAgent
 **Last Updated:** February 4, 2026
 
 ---

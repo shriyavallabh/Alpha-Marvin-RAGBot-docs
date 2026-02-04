@@ -1,7 +1,7 @@
 # User Manual — Beta v0.1.0
 
-**Product:** Legal Document Intelligence Platform
-**Audience:** Beta testers
+**Product:** Alpha Marvin / JurisAgent
+**Audience:** Beta testers (JurisAgent Basic)
 **Last Updated:** February 4, 2026
 
 ---
