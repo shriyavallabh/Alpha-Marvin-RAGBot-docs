@@ -74,6 +74,34 @@ The platform is hosted on cloud infrastructure managed by the product team. User
 - Cloud costs scale with usage
 - Requires reliable internet connectivity
 
+### SaaS Deployment — Detailed Timeline
+
+Granular task-level breakdown for the SaaS beta deployment. For the full deployment architecture (diagrams, request lifecycle, cost breakdown), see [SaaS Deployment Architecture](deployment-architecture.md).
+
+| Task | DEV | PM | Effort (hrs) | Target Date | Status |
+|------|-----|-----|-------------|-------------|--------|
+| Provision Azure VM (B2ms) | R/A | I | 2 | Jan 30 | DONE |
+| Install Docker, Docker Compose | R/A | I | 1 | Jan 30 | DONE |
+| Configure Docker Compose (PG, Qdrant, Neo4j) | R/A | I | 3 | Jan 31 | DONE |
+| Deploy FastAPI backend (systemd) | R/A | I | 2 | Feb 1 | DONE |
+| Deploy Next.js frontend (systemd) | R/A | I | 2 | Feb 1 | DONE |
+| Configure nginx + Let's Encrypt SSL | R/A | I | 2 | Feb 2 | DONE |
+| Integrate Clerk JWT authentication | R/A | I | 4 | Feb 3 | DONE |
+| Configure anthropic-max-router proxy | R/A | I | 2 | Feb 3 | DONE |
+| First document upload + query test | R/A | C | 2 | Feb 4 | DONE |
+| Batch ingest 84 documents | R/A | I | 8 | Feb 5 | DONE |
+| Generate 1308-question benchmark | R/A | I | 6 | Feb 5 | DONE |
+| Run benchmark evaluation (API mode) | R/A | C | 4 | Feb 6 | DONE |
+| Analyze benchmark results (LLM judge) | R/A | C | 4 | Feb 6 | DONE |
+| Create documentation site (MkDocs) | R/A | C | 4 | Feb 4 | DONE |
+| Write PM-facing docs (5 new docs) | R/A | C | 8 | Feb 7 | IN PROGRESS |
+| Complete admin module (accept invite, user mgmt) | R/A | I | 14 | Feb 12 | PLANNED |
+| PM review of live system + docs | C | R/A | 2 | Feb 9 | PLANNED |
+| Bug fixes from PM feedback | R/A | C | 8 | Feb 13 | PLANNED |
+| Performance testing | R/A | I | 4 | Feb 13 | PLANNED |
+| Beta acceptance sign-off | C | R/A | 2 | Feb 15 | PLANNED |
+| **Total** | | | **84** | | |
+
 ---
 
 ## Model 2: Private Hosting (Self-Hosted)

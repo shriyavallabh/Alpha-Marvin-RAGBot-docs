@@ -158,17 +158,21 @@
 
 ### Activities
 
-| Task | Completion Date | Dependency | Current Status |
-|------|----------------|------------|----------------|
-| Configure .env with production API keys | Feb 5 | API key procurement | Pending |
-| Start Docker services and verify health checks | Feb 5 | .env configured | Pending |
-| First end-to-end test with real legal PDF | Feb 6 | Services running | Pending |
-| Deploy to Azure VM with HTTPS | Feb 7 | E2E test passed | Pending |
-| Populate evaluation suite with real legal questions | Feb 8 | Deployment live | Pending |
-| Run evaluation, measure accuracy/relevance/citation metrics | Feb 10 | Eval suite ready | Pending |
-| Bug fixes from E2E testing | Feb 10–13 | Evaluation results | Pending |
-| Performance testing (<10s/question, <60s/100-page PDF) | Feb 13 | Bug fixes done | Pending |
-| Beta acceptance sign-off | Feb 15 | All above | Pending |
+| Task | Completion Date | Dependency | Effort (hrs) | Current Status |
+|------|----------------|------------|-------------|----------------|
+| Configure .env with production API keys | Feb 5 | API key procurement | 1 | Done |
+| Start Docker services and verify health checks | Feb 5 | .env configured | 2 | Done |
+| First end-to-end test with real legal PDF | Feb 6 | Services running | 2 | Done |
+| Deploy to Azure VM with HTTPS | Feb 7 | E2E test passed | 4 | Done |
+| Populate evaluation suite with real legal questions | Feb 8 | Deployment live | 6 | Done |
+| Run evaluation, measure accuracy/relevance/citation metrics | Feb 10 | Eval suite ready | 4 | Done |
+| Admin module completion (invite, user mgmt) | Feb 12 | Auth working | 14 | In Progress |
+| PM review and documentation updates | Feb 9 | Docs site live | 8 | In Progress |
+| Bug fixes from E2E testing and PM feedback | Feb 13 | Evaluation results | 8 | Planned |
+| Performance testing (<10s/question, <60s/100-page PDF) | Feb 13 | Bug fixes done | 4 | Planned |
+| Beta acceptance sign-off | Feb 15 | All above | 2 | Planned |
+
+> For detailed business-language descriptions of each feature with process flows, prerequisites, dependencies, and limitations, see the [Phase 2 Feature Guide](phase2-features.md).
 
 ### Beta Acceptance Criteria
 

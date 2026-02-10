@@ -23,13 +23,19 @@ nav:
   - Home: index.md
   - Product:
       - Product Roadmap: product-roadmap.md
+      - "Phase 2 Features": phase2-features.md
       - Beta Scope Document: scope-document.md
       - Use Cases: use-cases.md
+      - User Journey: user-journey.md
       - User Manual: user-manual.md
   - Architecture:
       - Reference Architecture: reference-architecture.md
+      - "SaaS Deployment": deployment-architecture.md
       - Chunking Strategies: chunking-strategies.md
       - API Specification: api-spec.md
+  - Administration:
+      - Admin Module: admin-module.md
+      - Dashboards: dashboards.md
   - Market:
       - Market Comparison: market-comparison.md
       - Feature Matrix: feature-matrix.md

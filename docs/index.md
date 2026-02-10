@@ -19,15 +19,23 @@ JurisAgent is the first product built on the Alpha Marvin platform, focused on l
 ### Product
 
 - [Product Roadmap](product-roadmap.md) — Vision, phases, and milestones
+- [Phase 2 Features](phase2-features.md) — Business-language feature guide with process flows
 - [Beta Scope Document](scope-document.md) — What's in scope for beta
 - [Use Cases](use-cases.md) — Target scenarios and user workflows
+- [User Journey](user-journey.md) — Full Admin and End User journeys from start to finish
 - [User Manual](user-manual.md) — How to use the application
 
 ### Architecture
 
 - [Reference Architecture](reference-architecture.md) — System design, tech stack, and component overview
+- [SaaS Deployment Architecture](deployment-architecture.md) — Deployment model, infrastructure, request lifecycle, cost breakdown
 - [Chunking Strategies](chunking-strategies.md) — How legal documents are split for retrieval
 - [API Specification](api-spec.md) — Backend REST API reference
+
+### Administration
+
+- [Admin Module](admin-module.md) — Role-based workflows, Admin vs Normal User, implementation status
+- [Dashboards](dashboards.md) — Dashboard inventory: what's built vs what's planned
 
 ### Market
 
