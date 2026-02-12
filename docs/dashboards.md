@@ -6,6 +6,10 @@
 
 This document provides an honest accounting of what dashboard capabilities exist today, what they do not yet show, and when gaps are planned to be addressed.
 
+!!! note "At a Glance"
+    3 dashboards fully built (Admin Stats, Document List, Conversation History).
+    1 partial (Document Insights — query-driven today, standalone dashboard in Phase 3).
+
 ---
 
 ## 1. Admin Statistics Dashboard
@@ -27,6 +31,65 @@ Five stat cards displayed in a responsive grid:
 | Users | Users | Count of users in PostgreSQL |
 
 All counts are scoped to the current tenant (tenant_id filtering).
+
+<div markdown="block" style="max-width:720px;margin:1.5rem auto;font-family:'Inter',-apple-system,sans-serif;">
+<div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.12);border:1px solid #e5e7eb;">
+
+<!-- Header -->
+<div style="background:#1a1f36;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;">
+<div style="display:flex;align-items:center;gap:10px;">
+<span style="color:#E8726A;font-weight:700;font-size:15px;">⚖ JurisAgent</span>
+<span style="color:#94a3b8;font-size:13px;">/ Admin Dashboard</span>
+</div>
+<span style="background:rgba(232,114,106,0.15);color:#E8726A;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;">Admin</span>
+</div>
+
+<div style="background:#f8f9fa;padding:24px;">
+
+<!-- Row 1: 3 cards -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;">
+
+<div style="background:#ffffff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;">
+<div style="font-size:28px;margin-bottom:4px;">📄</div>
+<div style="font-size:28px;font-weight:800;color:#1a1a1a;">84</div>
+<div style="font-size:12px;color:#6b7280;margin-top:2px;">Total Documents</div>
+</div>
+
+<div style="background:#ffffff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;">
+<div style="font-size:28px;margin-bottom:4px;">🔷</div>
+<div style="font-size:28px;font-weight:800;color:#1a1a1a;">5,369</div>
+<div style="font-size:12px;color:#6b7280;margin-top:2px;">Total Chunks</div>
+</div>
+
+<div style="background:#ffffff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;">
+<div style="font-size:28px;margin-bottom:4px;">🗄</div>
+<div style="font-size:28px;font-weight:800;color:#1a1a1a;">5,369</div>
+<div style="font-size:12px;color:#6b7280;margin-top:2px;">Vectors Stored</div>
+</div>
+
+</div>
+
+<!-- Row 2: 2 cards -->
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
+
+<div style="background:#ffffff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;">
+<div style="font-size:28px;margin-bottom:4px;">💬</div>
+<div style="font-size:28px;font-weight:800;color:#1a1a1a;">127</div>
+<div style="font-size:12px;color:#6b7280;margin-top:2px;">Conversations</div>
+</div>
+
+<div style="background:#ffffff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;">
+<div style="font-size:28px;margin-bottom:4px;">👥</div>
+<div style="font-size:28px;font-weight:800;color:#1a1a1a;">3</div>
+<div style="font-size:12px;color:#6b7280;margin-top:2px;">Active Users</div>
+</div>
+
+</div>
+
+</div>
+</div>
+<p style="text-align:center;color:#6b7280;font-size:13px;margin-top:8px;font-style:italic;">Admin Statistics Dashboard — live data from the JurisAgent deployment</p>
+</div>
 
 ### What It Does NOT Show
 
@@ -145,24 +208,63 @@ These work as **query-driven insights** — the user asks a question and gets an
 
 ### Current vs Planned
 
-```
-TODAY (Query-Driven)                 PLANNED (Dashboard, Phase 3)
-====================                 ===========================
+<div markdown="block" style="max-width:720px;margin:1.5rem auto;font-family:'Inter',-apple-system,sans-serif;">
+<div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.12);border:1px solid #e5e7eb;">
 
-User asks: "What are               Portfolio Insights Dashboard:
-the risks in Contract A?"          ┌─────────────────────────┐
-        │                          │ 12 Contracts Analyzed   │
-        ▼                          │ 3 High-Risk Clauses     │
-Claude analyzes + cites            │ 7 Upcoming Deadlines    │
-        │                          │ 24 Obligations Tracked  │
-        ▼                          │                         │
-Answer with sources +              │ [Risk Summary Chart]    │
-GREEN confidence                   │ [Deadline Calendar]     │
-                                   │ [Obligation Table]      │
-                                   └─────────────────────────┘
-                                   Auto-generated, always
-                                   visible, no prompt needed
-```
+<!-- Header -->
+<div style="background:#1a1f36;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;">
+<div style="display:flex;align-items:center;gap:10px;">
+<span style="color:#ffffff;font-weight:700;font-size:15px;">📊 Portfolio Insights Dashboard</span>
+</div>
+<span style="background:rgba(217,119,6,0.15);color:#d97706;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;">Phase 3 — Planned</span>
+</div>
+
+<div style="background:#f8f9fa;padding:24px;">
+
+<!-- Stat cards -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;">
+<div style="background:#ffffff;border-radius:10px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;border:1px dashed #d1d5db;">
+<div style="font-size:24px;font-weight:800;color:#1a1a1a;">12</div>
+<div style="font-size:11px;color:#6b7280;margin-top:2px;">Contracts Analyzed</div>
+</div>
+<div style="background:#ffffff;border-radius:10px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;border:1px dashed #d1d5db;">
+<div style="font-size:24px;font-weight:800;color:#dc2626;">3</div>
+<div style="font-size:11px;color:#6b7280;margin-top:2px;">High-Risk Clauses</div>
+</div>
+<div style="background:#ffffff;border-radius:10px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;border:1px dashed #d1d5db;">
+<div style="font-size:24px;font-weight:800;color:#d97706;">7</div>
+<div style="font-size:11px;color:#6b7280;margin-top:2px;">Upcoming Deadlines</div>
+</div>
+<div style="background:#ffffff;border-radius:10px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;border:1px dashed #d1d5db;">
+<div style="font-size:24px;font-weight:800;color:#1a1a1a;">24</div>
+<div style="font-size:11px;color:#6b7280;margin-top:2px;">Obligations Tracked</div>
+</div>
+</div>
+
+<!-- Placeholder areas -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
+<div style="border:2px dashed #d1d5db;border-radius:10px;padding:32px;text-align:center;background:#ffffff;">
+<div style="font-size:24px;margin-bottom:8px;opacity:0.4;">📈</div>
+<div style="font-size:13px;color:#9ca3af;font-weight:600;">Risk Summary Chart</div>
+<div style="font-size:11px;color:#d1d5db;margin-top:4px;">Coming in Phase 3</div>
+</div>
+<div style="border:2px dashed #d1d5db;border-radius:10px;padding:32px;text-align:center;background:#ffffff;">
+<div style="font-size:24px;margin-bottom:8px;opacity:0.4;">📅</div>
+<div style="font-size:13px;color:#9ca3af;font-weight:600;">Deadline Calendar</div>
+<div style="font-size:11px;color:#d1d5db;margin-top:4px;">Coming in Phase 3</div>
+</div>
+</div>
+
+<div style="border:2px dashed #d1d5db;border-radius:10px;padding:32px;text-align:center;background:#ffffff;">
+<div style="font-size:24px;margin-bottom:8px;opacity:0.4;">📋</div>
+<div style="font-size:13px;color:#9ca3af;font-weight:600;">Obligation Tracking Table</div>
+<div style="font-size:11px;color:#d1d5db;margin-top:4px;">Coming in Phase 3</div>
+</div>
+
+</div>
+</div>
+<p style="text-align:center;color:#6b7280;font-size:13px;margin-top:8px;font-style:italic;">Portfolio Insights Dashboard — planned for Phase 3, auto-generated without user prompts</p>
+</div>
 
 ---
 
