@@ -135,53 +135,48 @@ This document maps the complete journey for both user types — from first conta
 
 ### Phase 2: First Query Session
 
-<div markdown="block" style="max-width:720px;margin:1.5rem auto;font-family:'Inter',-apple-system,sans-serif;">
-<div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.12);border:1px solid #e5e7eb;">
-
-<!-- Title bar -->
-<div style="background:#1a1f36;padding:10px 16px;display:flex;align-items:center;gap:8px;">
-<div style="display:flex;gap:6px;">
-<span style="width:12px;height:12px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
-<span style="width:12px;height:12px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
-<span style="width:12px;height:12px;border-radius:50%;background:#28c840;display:inline-block;"></span>
-</div>
-<span style="color:#94a3b8;font-size:12px;margin-left:8px;">JurisAgent</span>
-</div>
-
-<div style="display:flex;min-height:300px;">
+<div markdown="block" style="max-width:740px;margin:1.5rem auto;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;">
+<div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid #e8e8e8;">
+<div style="display:flex;min-height:320px;">
 
 <!-- Sidebar -->
-<div style="width:180px;background:#1a1f36;padding:16px;flex-shrink:0;">
-<div style="color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Documents</div>
-<div style="color:#cbd5e1;font-size:12px;padding:5px 8px;border-radius:4px;margin-bottom:2px;">📄 NDA_AcmeCorp.pdf</div>
-<div style="color:#cbd5e1;font-size:12px;padding:5px 8px;border-radius:4px;margin-bottom:2px;">📄 Employment_Agmt.pdf</div>
-<div style="color:#cbd5e1;font-size:12px;padding:5px 8px;border-radius:4px;margin-bottom:2px;">📄 Vendor_Contract.pdf</div>
-<div style="color:#cbd5e1;font-size:12px;padding:5px 8px;border-radius:4px;margin-bottom:2px;">📄 Policy_Handbook.pdf</div>
-<div style="color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;margin:16px 0 8px;">History</div>
-<div style="color:#64748b;font-size:12px;padding:5px 8px;font-style:italic;">No conversations yet</div>
+<div style="width:200px;background:#2d2d3f;padding:20px 14px;flex-shrink:0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:24px;">
+<div style="width:28px;height:28px;border-radius:50%;background:#E8726A;display:flex;align-items:center;justify-content:center;"><span style="color:white;font-size:12px;font-weight:700;">=</span></div>
+<span style="color:#ffffff;font-weight:600;font-size:14px;">JurisAgent</span>
+</div>
+<div style="color:#8b8fa3;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Documents</div>
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#E8726A;display:inline-block;"></span><span style="color:#b4b8c8;font-size:12px;">NDA_AcmeCorp.pdf</span></div>
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;"></span><span style="color:#b4b8c8;font-size:12px;">Employment_Agmt.pdf</span></div>
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#3b82f6;display:inline-block;"></span><span style="color:#b4b8c8;font-size:12px;">Vendor_Contract.pdf</span></div>
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#a855f7;display:inline-block;"></span><span style="color:#b4b8c8;font-size:12px;">Policy_Handbook.pdf</span></div>
+<div style="border-top:1px solid rgba(255,255,255,0.08);margin:16px 0;"></div>
+<div style="color:#8b8fa3;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">History</div>
+<div style="color:#555770;font-size:12px;font-style:italic;">No conversations yet</div>
 </div>
 
 <!-- Main area - empty state -->
-<div style="flex:1;background:#f8f9fa;padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+<div style="flex:1;background:#fafafa;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
 <div style="text-align:center;margin-bottom:24px;">
-<div style="font-size:40px;margin-bottom:12px;">⚖</div>
+<div style="width:48px;height:48px;border-radius:50%;background:rgba(232,114,106,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;"><span style="color:#E8726A;font-size:22px;font-weight:700;">=</span></div>
 <div style="font-size:16px;font-weight:600;color:#1a1a1a;margin-bottom:4px;">Ask about your legal documents</div>
 <div style="font-size:13px;color:#6b7280;">Get grounded, citation-backed answers from your uploaded documents</div>
 </div>
-<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:400px;">
-<div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 12px;font-size:11px;color:#4b5563;cursor:pointer;">What are the key obligations?</div>
-<div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 12px;font-size:11px;color:#4b5563;cursor:pointer;">Summarize this contract</div>
-<div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 12px;font-size:11px;color:#4b5563;cursor:pointer;">Find termination clauses</div>
-<div style="background:#ffffff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 12px;font-size:11px;color:#4b5563;cursor:pointer;">Compare indemnification terms</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:420px;">
+<div style="background:#ffffff;border:1px solid #e8e8e8;border-radius:10px;padding:8px 14px;font-size:11px;color:#4b5563;">What are the key obligations?</div>
+<div style="background:#ffffff;border:1px solid #e8e8e8;border-radius:10px;padding:8px 14px;font-size:11px;color:#4b5563;">Summarize this contract</div>
+<div style="background:#ffffff;border:1px solid #e8e8e8;border-radius:10px;padding:8px 14px;font-size:11px;color:#4b5563;">Find termination clauses</div>
+<div style="background:#ffffff;border:1px solid #e8e8e8;border-radius:10px;padding:8px 14px;font-size:11px;color:#4b5563;">Compare indemnification terms</div>
 </div>
-<div style="margin-top:20px;width:100%;max-width:400px;background:#ffffff;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;font-size:13px;color:#9ca3af;">
-Ask about your legal documents...
+<div style="margin-top:20px;width:100%;max-width:420px;background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;padding:10px 14px;font-size:13px;color:#9ca3af;display:flex;align-items:center;justify-content:space-between;">
+<span>Ask anything about your documents...</span>
+<div style="width:28px;height:28px;border-radius:50%;background:#E8726A;display:flex;align-items:center;justify-content:center;"><span style="color:white;font-size:12px;">&#x27A4;</span></div>
 </div>
 </div>
 
 </div>
 </div>
-<p style="text-align:center;color:#6b7280;font-size:13px;margin-top:8px;font-style:italic;">JurisAgent empty state — suggested queries help users get started</p>
+<p style="text-align:center;color:#6b7280;font-size:13px;margin-top:10px;font-style:italic;">JurisAgent empty state — suggested queries help users get started</p>
 </div>
 
 ```

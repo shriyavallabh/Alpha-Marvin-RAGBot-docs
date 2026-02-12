@@ -32,63 +32,104 @@ Five stat cards displayed in a responsive grid:
 
 All counts are scoped to the current tenant (tenant_id filtering).
 
-<div markdown="block" style="max-width:720px;margin:1.5rem auto;font-family:'Inter',-apple-system,sans-serif;">
-<div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.12);border:1px solid #e5e7eb;">
+<div markdown="block" style="max-width:740px;margin:1.5rem auto;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;">
+<div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid #e8e8e8;">
 
-<!-- Header -->
-<div style="background:#1a1f36;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;">
-<div style="display:flex;align-items:center;gap:10px;">
-<span style="color:#E8726A;font-weight:700;font-size:15px;">⚖ JurisAgent</span>
-<span style="color:#94a3b8;font-size:13px;">/ Admin Dashboard</span>
+<!-- Sidebar + Dashboard layout -->
+<div style="display:flex;">
+
+<!-- Mini sidebar -->
+<div style="width:200px;background:#2d2d3f;padding:20px 14px;flex-shrink:0;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:24px;">
+<div style="width:28px;height:28px;border-radius:50%;background:#E8726A;display:flex;align-items:center;justify-content:center;"><span style="color:white;font-size:12px;font-weight:700;">=</span></div>
+<span style="color:#ffffff;font-weight:600;font-size:14px;">JurisAgent</span>
 </div>
-<span style="background:rgba(232,114,106,0.15);color:#E8726A;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;">Admin</span>
-</div>
-
-<div style="background:#f8f9fa;padding:24px;">
-
-<!-- Row 1: 3 cards -->
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;">
-
-<div style="background:#ffffff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;">
-<div style="font-size:28px;margin-bottom:4px;">📄</div>
-<div style="font-size:28px;font-weight:800;color:#1a1a1a;">84</div>
-<div style="font-size:12px;color:#6b7280;margin-top:2px;">Total Documents</div>
+<div style="color:#ffffff;font-size:13px;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.08);margin-bottom:3px;display:flex;align-items:center;gap:8px;"><span style="width:18px;height:18px;border-radius:5px;background:rgba(255,255,255,0.12);display:inline-flex;align-items:center;justify-content:center;font-size:9px;color:#ccc;">&#9638;</span> Dashboard</div>
+<div style="color:#8b8fa3;font-size:13px;padding:8px 10px;margin-bottom:3px;display:flex;align-items:center;gap:8px;"><span style="width:18px;height:18px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:9px;color:#8b8fa3;">&#9675;</span> Ask JurisAgent</div>
+<div style="color:#8b8fa3;font-size:13px;padding:8px 10px;margin-bottom:3px;display:flex;align-items:center;gap:8px;"><span style="width:18px;height:18px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:9px;color:#8b8fa3;">&#9633;</span> Knowledge Base</div>
+<div style="color:#8b8fa3;font-size:13px;padding:8px 10px;margin-bottom:3px;display:flex;align-items:center;gap:8px;"><span style="width:18px;height:18px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:9px;color:#8b8fa3;">&#9881;</span> Settings</div>
 </div>
 
-<div style="background:#ffffff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;">
-<div style="font-size:28px;margin-bottom:4px;">🔷</div>
-<div style="font-size:28px;font-weight:800;color:#1a1a1a;">5,369</div>
-<div style="font-size:12px;color:#6b7280;margin-top:2px;">Total Chunks</div>
+<!-- Dashboard content -->
+<div style="flex:1;background:#fafafa;padding:24px;">
+<div style="font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:2px;">Dashboard</div>
+<div style="font-size:13px;color:#6b7280;margin-bottom:20px;">Your legal knowledge at your fingertips</div>
+
+<!-- 4 stat cards in a row (matching alphamarvin.com layout) -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px;">
+
+<div style="background:#ffffff;border-radius:12px;padding:16px;border:1px solid #e8e8e8;">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
+<span style="width:20px;height:20px;border-radius:6px;background:rgba(232,114,106,0.1);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:#E8726A;">&#9634;</span>
+<span style="font-size:11px;color:#6b7280;">Documents Indexed</span>
+</div>
+<div style="font-size:28px;font-weight:800;color:#1a1a1a;margin-bottom:2px;">84</div>
+<div style="font-size:11px;color:#22c55e;">+12 this month</div>
 </div>
 
-<div style="background:#ffffff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;">
-<div style="font-size:28px;margin-bottom:4px;">🗄</div>
-<div style="font-size:28px;font-weight:800;color:#1a1a1a;">5,369</div>
-<div style="font-size:12px;color:#6b7280;margin-top:2px;">Vectors Stored</div>
+<div style="background:#ffffff;border-radius:12px;padding:16px;border:1px solid #e8e8e8;">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
+<span style="width:20px;height:20px;border-radius:6px;background:rgba(232,114,106,0.1);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:#E8726A;">&#9643;</span>
+<span style="font-size:11px;color:#6b7280;">Chunks Processed</span>
+</div>
+<div style="font-size:28px;font-weight:800;color:#1a1a1a;margin-bottom:2px;">5,369</div>
+<div style="font-size:11px;color:#6b7280;">Across all documents</div>
+</div>
+
+<div style="background:#ffffff;border-radius:12px;padding:16px;border:1px solid #e8e8e8;">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
+<span style="width:20px;height:20px;border-radius:6px;background:rgba(232,114,106,0.1);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:#E8726A;">&#9673;</span>
+<span style="font-size:11px;color:#6b7280;">Conversations</span>
+</div>
+<div style="font-size:28px;font-weight:800;color:#1a1a1a;margin-bottom:2px;">127</div>
+<div style="font-size:11px;color:#22c55e;">Active</div>
+</div>
+
+<div style="background:#ffffff;border-radius:12px;padding:16px;border:1px solid #e8e8e8;">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
+<span style="width:20px;height:20px;border-radius:6px;background:rgba(232,114,106,0.1);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:#E8726A;">&#9775;</span>
+<span style="font-size:11px;color:#6b7280;">Active Users</span>
+</div>
+<div style="font-size:28px;font-weight:800;color:#1a1a1a;margin-bottom:2px;">3</div>
+<div style="font-size:11px;color:#6b7280;">2 Admin, 1 Member</div>
 </div>
 
 </div>
 
-<!-- Row 2: 2 cards -->
-<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
+<!-- Answer Quality + Knowledge Insights row (matching alphamarvin.com) -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
 
-<div style="background:#ffffff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;">
-<div style="font-size:28px;margin-bottom:4px;">💬</div>
-<div style="font-size:28px;font-weight:800;color:#1a1a1a;">127</div>
-<div style="font-size:12px;color:#6b7280;margin-top:2px;">Conversations</div>
+<div style="background:#ffffff;border-radius:12px;padding:16px;border:1px solid #e8e8e8;">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+<div style="display:flex;align-items:center;gap:6px;"><span style="font-size:12px;color:#E8726A;">&#10039;</span><span style="font-size:13px;font-weight:600;color:#1a1a1a;">Answer Quality</span></div>
+<span style="font-size:11px;color:#22c55e;display:flex;align-items:center;gap:3px;"><span style="width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;"></span> Improving</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
+<span style="font-size:22px;font-weight:800;color:#1a1a1a;">94.2%</span>
+<span style="font-size:11px;color:#22c55e;">+18%</span>
+<span style="font-size:11px;color:#6b7280;">vs last month</span>
+</div>
+<div style="font-size:11px;color:#6b7280;">Based on 50-question benchmark evaluation</div>
 </div>
 
-<div style="background:#ffffff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;">
-<div style="font-size:28px;margin-bottom:4px;">👥</div>
-<div style="font-size:28px;font-weight:800;color:#1a1a1a;">3</div>
-<div style="font-size:12px;color:#6b7280;margin-top:2px;">Active Users</div>
+<div style="background:#ffffff;border-radius:12px;padding:16px;border:1px solid #e8e8e8;">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;"><span style="font-size:12px;color:#E8726A;">&#10039;</span><span style="font-size:13px;font-weight:600;color:#1a1a1a;">Knowledge Insights</span></div>
+<div style="font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Active by type</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
+<span style="font-size:11px;color:#4b5563;display:flex;align-items:center;gap:3px;"><span style="width:6px;height:6px;border-radius:50%;background:#E8726A;display:inline-block;"></span> Contracts (34)</span>
+<span style="font-size:11px;color:#4b5563;display:flex;align-items:center;gap:3px;"><span style="width:6px;height:6px;border-radius:50%;background:#3b82f6;display:inline-block;"></span> Depositions (28)</span>
+<span style="font-size:11px;color:#4b5563;display:flex;align-items:center;gap:3px;"><span style="width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;"></span> Policies (22)</span>
+</div>
+<div style="font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Knowledge gaps</div>
+<div style="background:#fefce8;padding:6px 10px;border-radius:6px;font-size:11px;color:#a16207;"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#eab308;margin-right:4px;vertical-align:middle;"></span> Q3 compliance reports not yet indexed</div>
 </div>
 
 </div>
 
 </div>
 </div>
-<p style="text-align:center;color:#6b7280;font-size:13px;margin-top:8px;font-style:italic;">Admin Statistics Dashboard — live data from the JurisAgent deployment</p>
+</div>
+<p style="text-align:center;color:#6b7280;font-size:13px;margin-top:10px;font-style:italic;">Admin Dashboard — modeled on the Alpha Marvin platform dashboard</p>
 </div>
 
 ### What It Does NOT Show
@@ -208,62 +249,54 @@ These work as **query-driven insights** — the user asks a question and gets an
 
 ### Current vs Planned
 
-<div markdown="block" style="max-width:720px;margin:1.5rem auto;font-family:'Inter',-apple-system,sans-serif;">
-<div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.12);border:1px solid #e5e7eb;">
+<div markdown="block" style="max-width:740px;margin:1.5rem auto;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;">
+<div style="border-radius:16px;overflow:hidden;border:1px solid #e8e8e8;box-shadow:0 8px 32px rgba(0,0,0,0.08);opacity:0.92;">
 
-<!-- Header -->
-<div style="background:#1a1f36;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;">
-<div style="display:flex;align-items:center;gap:10px;">
-<span style="color:#ffffff;font-weight:700;font-size:15px;">📊 Portfolio Insights Dashboard</span>
+<div style="background:#fafafa;padding:24px;">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+<div style="font-size:18px;font-weight:700;color:#1a1a1a;">Portfolio Insights Dashboard</div>
+<span style="background:rgba(217,119,6,0.1);color:#d97706;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;">Phase 3 — Planned</span>
 </div>
-<span style="background:rgba(217,119,6,0.15);color:#d97706;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;">Phase 3 — Planned</span>
-</div>
-
-<div style="background:#f8f9fa;padding:24px;">
 
 <!-- Stat cards -->
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;">
-<div style="background:#ffffff;border-radius:10px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;border:1px dashed #d1d5db;">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;">
+<div style="background:#ffffff;border-radius:12px;padding:16px;border:1px dashed #d1d5db;">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;"><span style="width:20px;height:20px;border-radius:6px;background:rgba(232,114,106,0.1);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:#E8726A;">&#9634;</span><span style="font-size:11px;color:#6b7280;">Contracts</span></div>
 <div style="font-size:24px;font-weight:800;color:#1a1a1a;">12</div>
-<div style="font-size:11px;color:#6b7280;margin-top:2px;">Contracts Analyzed</div>
 </div>
-<div style="background:#ffffff;border-radius:10px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;border:1px dashed #d1d5db;">
+<div style="background:#ffffff;border-radius:12px;padding:16px;border:1px dashed #d1d5db;">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;"><span style="width:20px;height:20px;border-radius:6px;background:rgba(220,38,38,0.1);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:#dc2626;">&#9888;</span><span style="font-size:11px;color:#6b7280;">High-Risk</span></div>
 <div style="font-size:24px;font-weight:800;color:#dc2626;">3</div>
-<div style="font-size:11px;color:#6b7280;margin-top:2px;">High-Risk Clauses</div>
 </div>
-<div style="background:#ffffff;border-radius:10px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;border:1px dashed #d1d5db;">
+<div style="background:#ffffff;border-radius:12px;padding:16px;border:1px dashed #d1d5db;">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;"><span style="width:20px;height:20px;border-radius:6px;background:rgba(217,119,6,0.1);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:#d97706;">&#9201;</span><span style="font-size:11px;color:#6b7280;">Deadlines</span></div>
 <div style="font-size:24px;font-weight:800;color:#d97706;">7</div>
-<div style="font-size:11px;color:#6b7280;margin-top:2px;">Upcoming Deadlines</div>
 </div>
-<div style="background:#ffffff;border-radius:10px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06);text-align:center;border:1px dashed #d1d5db;">
+<div style="background:#ffffff;border-radius:12px;padding:16px;border:1px dashed #d1d5db;">
+<div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;"><span style="width:20px;height:20px;border-radius:6px;background:rgba(232,114,106,0.1);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:#E8726A;">&#9745;</span><span style="font-size:11px;color:#6b7280;">Obligations</span></div>
 <div style="font-size:24px;font-weight:800;color:#1a1a1a;">24</div>
-<div style="font-size:11px;color:#6b7280;margin-top:2px;">Obligations Tracked</div>
 </div>
 </div>
 
 <!-- Placeholder areas -->
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
-<div style="border:2px dashed #d1d5db;border-radius:10px;padding:32px;text-align:center;background:#ffffff;">
-<div style="font-size:24px;margin-bottom:8px;opacity:0.4;">📈</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+<div style="border:2px dashed #d1d5db;border-radius:12px;padding:28px;text-align:center;background:#ffffff;">
 <div style="font-size:13px;color:#9ca3af;font-weight:600;">Risk Summary Chart</div>
 <div style="font-size:11px;color:#d1d5db;margin-top:4px;">Coming in Phase 3</div>
 </div>
-<div style="border:2px dashed #d1d5db;border-radius:10px;padding:32px;text-align:center;background:#ffffff;">
-<div style="font-size:24px;margin-bottom:8px;opacity:0.4;">📅</div>
+<div style="border:2px dashed #d1d5db;border-radius:12px;padding:28px;text-align:center;background:#ffffff;">
 <div style="font-size:13px;color:#9ca3af;font-weight:600;">Deadline Calendar</div>
 <div style="font-size:11px;color:#d1d5db;margin-top:4px;">Coming in Phase 3</div>
 </div>
 </div>
-
-<div style="border:2px dashed #d1d5db;border-radius:10px;padding:32px;text-align:center;background:#ffffff;">
-<div style="font-size:24px;margin-bottom:8px;opacity:0.4;">📋</div>
+<div style="border:2px dashed #d1d5db;border-radius:12px;padding:28px;text-align:center;background:#ffffff;">
 <div style="font-size:13px;color:#9ca3af;font-weight:600;">Obligation Tracking Table</div>
 <div style="font-size:11px;color:#d1d5db;margin-top:4px;">Coming in Phase 3</div>
 </div>
 
 </div>
 </div>
-<p style="text-align:center;color:#6b7280;font-size:13px;margin-top:8px;font-style:italic;">Portfolio Insights Dashboard — planned for Phase 3, auto-generated without user prompts</p>
+<p style="text-align:center;color:#6b7280;font-size:13px;margin-top:10px;font-style:italic;">Portfolio Insights Dashboard — planned for Phase 3, auto-generated without user prompts</p>
 </div>
 
 ---

@@ -23,27 +23,27 @@ Allows Admin users to upload legal PDF documents through a drag-and-drop interfa
 
 ### Process Flow
 
-<div markdown="block" style="max-width:720px;margin:1.5rem auto;font-family:'Inter',-apple-system,sans-serif;">
-<div style="background:#ffffff;border-radius:12px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,0.1);border:1px solid #e5e7eb;">
+<div markdown="block" style="max-width:740px;margin:1.5rem auto;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;">
+<div style="background:#ffffff;border-radius:16px;padding:24px;border:1px solid #e8e8e8;">
 <div style="text-align:center;font-weight:700;font-size:14px;color:#1a1a1a;margin-bottom:16px;">9-Stage AI Ingestion Pipeline</div>
 <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;">
-<div style="background:#E8726A;color:white;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">1. Parse</div>
-<span style="color:#d1d5db;font-size:16px;">→</span>
-<div style="background:#E8726A;color:white;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">2. Dedup</div>
-<span style="color:#d1d5db;font-size:16px;">→</span>
-<div style="background:#E8726A;color:white;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">3. Chunk</div>
-<span style="color:#d1d5db;font-size:16px;">→</span>
-<div style="background:#E8726A;color:white;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">4. Enrich</div>
-<span style="color:#d1d5db;font-size:16px;">→</span>
-<div style="background:#E8726A;color:white;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">5. Extract</div>
-<span style="color:#d1d5db;font-size:16px;">→</span>
-<div style="background:#E8726A;color:white;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">6. Embed</div>
-<span style="color:#d1d5db;font-size:16px;">→</span>
-<div style="background:#E8726A;color:white;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">7. Vector Store</div>
-<span style="color:#d1d5db;font-size:16px;">→</span>
-<div style="background:#E8726A;color:white;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">8. Database</div>
-<span style="color:#d1d5db;font-size:16px;">→</span>
-<div style="background:#E8726A;color:white;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">9. Knowledge Graph</div>
+<div style="background:#E8726A;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">1. Parse</div>
+<span style="color:#d1d5db;font-size:14px;">&#x2192;</span>
+<div style="background:#E8726A;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">2. Dedup</div>
+<span style="color:#d1d5db;font-size:14px;">&#x2192;</span>
+<div style="background:#E8726A;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">3. Chunk</div>
+<span style="color:#d1d5db;font-size:14px;">&#x2192;</span>
+<div style="background:#E8726A;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">4. Enrich</div>
+<span style="color:#d1d5db;font-size:14px;">&#x2192;</span>
+<div style="background:#E8726A;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">5. Extract</div>
+<span style="color:#d1d5db;font-size:14px;">&#x2192;</span>
+<div style="background:#E8726A;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">6. Embed</div>
+<span style="color:#d1d5db;font-size:14px;">&#x2192;</span>
+<div style="background:#E8726A;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">7. Vector Store</div>
+<span style="color:#d1d5db;font-size:14px;">&#x2192;</span>
+<div style="background:#E8726A;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">8. Database</div>
+<span style="color:#d1d5db;font-size:14px;">&#x2192;</span>
+<div style="background:#E8726A;color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;">9. Knowledge Graph</div>
 </div>
 <div style="text-align:center;margin-top:12px;font-size:12px;color:#6b7280;">~15 seconds per page for scanned PDFs &nbsp;|&nbsp; Text PDFs process in under 1 second per page</div>
 </div>
@@ -139,55 +139,44 @@ Document appears in sidebar — ready for queries
 
 Allows any authenticated user to ask questions about uploaded legal documents in plain English. No query syntax, no keyword matching — just type a question the way you would ask a colleague.
 
-<div markdown="block" style="max-width:720px;margin:1.5rem auto;font-family:'Inter',-apple-system,sans-serif;">
-<div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.12);border:1px solid #e5e7eb;">
+<div markdown="block" style="max-width:740px;margin:1.5rem auto;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;">
+<div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid #e8e8e8;">
 
-<!-- Header -->
-<div style="background:#1a1f36;padding:12px 20px;display:flex;align-items:center;gap:10px;">
-<span style="color:#E8726A;font-weight:700;font-size:14px;">⚖ JurisAgent</span>
-<span style="color:#94a3b8;font-size:12px;">— Natural Language Q&A</span>
-</div>
-
-<div style="background:#f8f9fa;padding:20px;">
+<div style="background:#fafafa;padding:20px;">
 
 <!-- User message -->
 <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
-<div style="background:#E8726A;color:white;padding:10px 14px;border-radius:12px 12px 2px 12px;max-width:85%;font-size:13px;line-height:1.5;">
-What are the indemnification obligations in the TTG Agreement?
-</div>
+<div style="background:#E8726A;color:white;padding:10px 16px;border-radius:16px 16px 4px 16px;max-width:85%;font-size:13px;line-height:1.5;">What are the indemnification obligations in the TTG Agreement?</div>
 </div>
 
-<!-- AI response -->
-<div style="display:flex;justify-content:flex-start;">
-<div style="background:#ffffff;padding:16px;border-radius:2px 12px 12px 12px;max-width:92%;font-size:13px;box-shadow:0 1px 3px rgba(0,0,0,0.08);line-height:1.7;color:#1a1a1a;">
+<!-- AI response with avatar -->
+<div style="display:flex;gap:10px;align-items:flex-start;">
+<div style="width:28px;height:28px;border-radius:50%;background:#E8726A;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px;"><span style="color:white;font-size:12px;font-weight:700;">=</span></div>
+<div style="background:#ffffff;padding:16px;border-radius:4px 16px 16px 16px;max-width:90%;font-size:13px;line-height:1.7;color:#1a1a1a;border:1px solid #f0f0f0;">
+<div style="font-size:12px;color:#E8726A;font-weight:600;margin-bottom:8px;">JurisAgent</div>
 
-<strong style="font-size:14px;">Indemnification Obligations — TTG Agreement</strong><br><br>
+<strong>Indemnification Obligations — TTG Agreement</strong><br><br>
 
-The TTG Agreement establishes a comprehensive mutual indemnification framework:<br><br>
+<span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#E8726A;margin-right:6px;vertical-align:middle;"></span> <strong>General Indemnification (§8.2):</strong> Each party shall indemnify and hold harmless the other from third-party claims arising from material breach of representations or warranties.<br>
+<span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#E8726A;margin-right:6px;vertical-align:middle;"></span> <strong>IP Indemnification (§8.3):</strong> Service Provider shall defend against third-party IP infringement claims related to delivered work product.<br>
+<span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#E8726A;margin-right:6px;vertical-align:middle;"></span> <strong>Liability Cap (§8.5):</strong> Capped at total fees paid in preceding 12-month period, except for gross negligence.
 
-<strong>1. General Indemnification (§8.2)</strong><br>
-Each party shall indemnify, defend, and hold harmless the other party and its affiliates from any third-party claims arising from a material breach of representations or warranties under this Agreement.
-<span style="background:#fef3c7;padding:1px 6px;border-radius:4px;font-size:11px;color:#92400e;white-space:nowrap;">[Source 1: QAMAR 003092, Page 5]</span><br><br>
-
-<strong>2. IP Indemnification (§8.3)</strong><br>
-The Service Provider shall defend and indemnify the Client against claims that the delivered work product infringes any third-party intellectual property rights.
-<span style="background:#fef3c7;padding:1px 6px;border-radius:4px;font-size:11px;color:#92400e;white-space:nowrap;">[Source 6: QAMAR 003098, Pages 4-5]</span><br><br>
-
-<strong>3. Limitation on Liability (§8.5)</strong><br>
-Indemnification obligations are capped at the total fees paid under the Agreement in the preceding 12-month period, except in cases of gross negligence or willful misconduct.
-<span style="background:#fef3c7;padding:1px 6px;border-radius:4px;font-size:11px;color:#92400e;white-space:nowrap;">[Source 3: QAMAR 003092, Page 8]</span><br><br>
-
-<!-- Confidence badge -->
-<div style="display:inline-block;background:#dcfce7;color:#166534;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;">
-✓ High Confidence — 92%
+<div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;">
+<div style="padding:5px 10px;background:#f8f8f8;border-radius:6px;font-size:11px;color:#6b7280;display:inline-flex;align-items:center;gap:4px;">&#9634; Source: Legal &gt; QAMAR 003092 &gt; §8.2, Page 5</div>
+<div style="padding:5px 10px;background:#f8f8f8;border-radius:6px;font-size:11px;color:#6b7280;display:inline-flex;align-items:center;gap:4px;">&#9634; Source: Legal &gt; QAMAR 003098 &gt; §8.3, Pages 4-5</div>
 </div>
 
+<div style="margin-top:10px;display:flex;align-items:center;gap:8px;">
+<span style="font-size:11px;color:#6b7280;">Confidence</span>
+<div style="flex:1;height:4px;background:#e5e7eb;border-radius:2px;overflow:hidden;max-width:120px;"><div style="width:92%;height:100%;background:#22c55e;border-radius:2px;"></div></div>
+<span style="font-size:11px;color:#22c55e;font-weight:600;">92%</span>
+</div>
 </div>
 </div>
 
 </div>
 </div>
-<p style="text-align:center;color:#6b7280;font-size:13px;margin-top:8px;font-style:italic;">Natural language Q&A — citation-backed answers with source references and confidence scoring</p>
+<p style="text-align:center;color:#6b7280;font-size:13px;margin-top:10px;font-style:italic;">Natural language Q&A — source-cited answers with confidence scoring</p>
 </div>
 
 ### Process Flow
@@ -315,32 +304,41 @@ User verifies the citation is accurate
 
 Every answer is automatically checked against the source documents. The system assigns a confidence score and hallucination risk rating, displayed as a color-coded indicator so users know how much to trust each answer.
 
-<div markdown="block" style="max-width:720px;margin:1.5rem auto;font-family:'Inter',-apple-system,sans-serif;">
-<div style="background:#ffffff;border-radius:12px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,0.1);border:1px solid #e5e7eb;">
-<div style="text-align:center;font-weight:700;font-size:14px;color:#1a1a1a;margin-bottom:16px;">Confidence Scoring — Three Levels</div>
-<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+<div markdown="block" style="max-width:740px;margin:1.5rem auto;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;">
+<div style="background:#ffffff;border-radius:16px;padding:24px;border:1px solid #e8e8e8;">
+<div style="text-align:center;font-weight:700;font-size:14px;color:#1a1a1a;margin-bottom:20px;">Confidence Scoring — Three Levels</div>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
 
 <!-- GREEN -->
-<div style="flex:1;min-width:180px;max-width:220px;text-align:center;">
-<div style="background:#16a34a;color:white;padding:10px 16px;border-radius:24px;font-size:13px;font-weight:600;margin-bottom:8px;">
-✓ High Confidence — 92%
+<div style="flex:1;min-width:190px;max-width:220px;background:#fafafa;border-radius:12px;padding:16px;border:1px solid #e8e8e8;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+<span style="font-size:11px;color:#6b7280;">Confidence</span>
+<div style="flex:1;height:4px;background:#e5e7eb;border-radius:2px;overflow:hidden;"><div style="width:92%;height:100%;background:#22c55e;border-radius:2px;"></div></div>
+<span style="font-size:11px;color:#22c55e;font-weight:700;">92%</span>
 </div>
+<div style="font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:4px;">High Confidence</div>
 <div style="font-size:11px;color:#6b7280;line-height:1.5;">Answer is well-grounded in source documents. Low hallucination risk.</div>
 </div>
 
 <!-- YELLOW -->
-<div style="flex:1;min-width:180px;max-width:220px;text-align:center;">
-<div style="background:#d97706;color:white;padding:10px 16px;border-radius:24px;font-size:13px;font-weight:600;margin-bottom:8px;">
-⚠ Moderate — Verify Sources — 50%
+<div style="flex:1;min-width:190px;max-width:220px;background:#fafafa;border-radius:12px;padding:16px;border:1px solid #e8e8e8;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+<span style="font-size:11px;color:#6b7280;">Confidence</span>
+<div style="flex:1;height:4px;background:#e5e7eb;border-radius:2px;overflow:hidden;"><div style="width:50%;height:100%;background:#d97706;border-radius:2px;"></div></div>
+<span style="font-size:11px;color:#d97706;font-weight:700;">50%</span>
 </div>
+<div style="font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:4px;">Moderate — Verify Sources</div>
 <div style="font-size:11px;color:#6b7280;line-height:1.5;">Some claims may lack full support. Review cited sources carefully.</div>
 </div>
 
 <!-- RED -->
-<div style="flex:1;min-width:180px;max-width:220px;text-align:center;">
-<div style="background:#dc2626;color:white;padding:10px 16px;border-radius:24px;font-size:13px;font-weight:600;margin-bottom:8px;">
-✗ Low Confidence — 23%
+<div style="flex:1;min-width:190px;max-width:220px;background:#fafafa;border-radius:12px;padding:16px;border:1px solid #e8e8e8;">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+<span style="font-size:11px;color:#6b7280;">Confidence</span>
+<div style="flex:1;height:4px;background:#e5e7eb;border-radius:2px;overflow:hidden;"><div style="width:23%;height:100%;background:#dc2626;border-radius:2px;"></div></div>
+<span style="font-size:11px;color:#dc2626;font-weight:700;">23%</span>
 </div>
+<div style="font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:4px;">Low Confidence</div>
 <div style="font-size:11px;color:#6b7280;line-height:1.5;">Insufficient source support. Verify all claims independently.</div>
 </div>
 
