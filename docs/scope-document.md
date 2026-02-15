@@ -3,7 +3,7 @@
 **Product:** Alpha Marvin / JurisAgent
 **Beta Version:** v0.1.0 (JurisAgent Basic)
 **Beta Date:** February 15, 2026
-**Prepared By:** Vallabh Pethkar
+**Prepared By:** Alpha Marvin Team
 
 ---
 
@@ -176,5 +176,5 @@ This document defines what is included in the February 15 beta release, what is 
 
 | Role | Name | Date | Approved |
 |------|------|------|----------|
-| Developer | Vallabh Pethkar | Feb 15, 2026 | All acceptance criteria met |
+| Developer | Technical Lead | Feb 15, 2026 | All acceptance criteria met |
 | PM/Advisor | Harish | | |

@@ -2,7 +2,7 @@
 
 **Product:** Alpha Marvin / JurisAgent
 **Last Updated:** February 15, 2026
-**Owner:** Vallabh Pethkar
+**Owner:** Alpha Marvin Team
 
 ---
 

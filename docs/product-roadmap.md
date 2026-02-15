@@ -5,7 +5,7 @@
 **Mission (JurisAgent):** Trusted legal intelligence, grounded in truth. Empowering legal professionals with an agentic AI platform for secure document upload, natural language questions, and citation-backed answers with zero tolerance for hallucination.
 
 **Last Updated:** February 15, 2026
-**Owner:** Vallabh Pethkar
+**Owner:** Alpha Marvin Team
 
 ---
 

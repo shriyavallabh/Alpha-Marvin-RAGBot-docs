@@ -4,7 +4,7 @@
 **Phase:** Phase 2 — JurisAgent Basic
 **Tagline:** Grounded truth, simplified.
 **Last Updated:** February 15, 2026
-**Owner:** Vallabh Pethkar
+**Owner:** Alpha Marvin Team
 
 This document describes each Phase 2 feature in business language: what it does, how it works, what it depends on, and what it cannot do.
 

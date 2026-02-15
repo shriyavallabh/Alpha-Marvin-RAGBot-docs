@@ -15,7 +15,7 @@
 
 | Abbreviation | Role | Person |
 |-------------|------|--------|
-| DEV | Developer / Technical Lead | Vallabh Pethkar |
+| DEV | Developer / Technical Lead | Technical Lead |
 | PM | Product Manager / Senior Advisor | PM (30+ years experience) |
 | USER | Beta Tester / End User | Beta participants |
 

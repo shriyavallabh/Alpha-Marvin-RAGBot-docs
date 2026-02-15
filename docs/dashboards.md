@@ -2,7 +2,7 @@
 
 **Product:** Alpha Marvin / JurisAgent
 **Last Updated:** February 15, 2026
-**Owner:** Vallabh Pethkar
+**Owner:** Alpha Marvin Team
 
 This document provides an honest accounting of what dashboard capabilities exist today, what they do not yet show, and when gaps are planned to be addressed.
 

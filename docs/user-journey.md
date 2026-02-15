@@ -2,7 +2,7 @@
 
 **Product:** Alpha Marvin / JurisAgent
 **Last Updated:** February 15, 2026
-**Owner:** Vallabh Pethkar
+**Owner:** Alpha Marvin Team
 
 This document maps the complete journey for both user types — from first contact to daily usage.
 

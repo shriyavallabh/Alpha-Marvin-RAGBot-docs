@@ -280,7 +280,7 @@ Docker Compose deployment on a single VM. Multi-tenant from day one with tenant 
 
 | Role | Name | What They Bring |
 |------|------|----------------|
-| **Founder & CTO** | Vallabh Pethkar | Full-stack engineer. Built the entire platform: backend (FastAPI/Python), frontend (Next.js/React), ML pipeline, knowledge graph, deployment infrastructure. |
+| **Founder & CTO** | *[Name]* | Full-stack engineer. Built the entire platform: backend (FastAPI/Python), frontend (Next.js/React), ML pipeline, knowledge graph, deployment infrastructure. |
 | **Product Advisor** | Harish | Product strategy and legal tech domain expertise. Shaped the product roadmap and feature prioritization. |
 
 ### Key Hires (Post-Funding)

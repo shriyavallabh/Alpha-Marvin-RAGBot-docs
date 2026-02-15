@@ -124,7 +124,7 @@ JurisAgent is a document intelligence platform purpose-built for legal professio
 
 | Role | Name | Background |
 |------|------|------------|
-| Founder & Developer | Vallabh Pethkar | Full-stack engineer, AI/ML, built end-to-end platform |
+| Founder & Developer | *[Name]* | Full-stack engineer, AI/ML, built end-to-end platform |
 | Product Advisor | Harish | Product management, legal tech domain |
 
 *Hiring plan: Head of Sales, Legal Domain Expert, Frontend Engineer (post-funding)*
@@ -158,7 +158,6 @@ JurisAgent is a document intelligence platform purpose-built for legal professio
 
 ## Contact
 
-**Vallabh Pethkar**
-Founder, Alpha Marvin
+*[Contact details to be added]*
 
 *[Contact details to be added]*
