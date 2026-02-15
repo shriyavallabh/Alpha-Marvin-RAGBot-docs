@@ -36,6 +36,11 @@ nav:
   - Administration:
       - Admin Module: admin-module.md
       - Dashboards: dashboards.md
+  - Investor:
+      - Executive Summary: executive-summary.md
+      - Pitch Deck: pitch-deck.md
+      - Business Model: business-model.md
+      - Go-to-Market Strategy: go-to-market.md
   - Market:
       - Market Comparison: market-comparison.md
       - Feature Matrix: feature-matrix.md
