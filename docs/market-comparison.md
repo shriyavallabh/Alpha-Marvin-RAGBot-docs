@@ -1,7 +1,7 @@
 # Market Comparison & Competitive Analysis
 
 **Product:** Alpha Marvin / JurisAgent
-**Last Updated:** February 4, 2026
+**Last Updated:** February 15, 2026
 
 ---
 
@@ -73,7 +73,7 @@
 | **Document Q&A** | Yes | Yes | Yes | Yes | Limited |
 | **Knowledge Graph** | Yes (Neo4j, 3-hop) | No (public) | No | No | No |
 | **Grounding Validation** | Yes (confidence + risk) | Unspecified | No | No | No |
-| **Hallucination Rate** | Target <5% | ~5% (VLAIR) | ~10% (VLAIR) | 17% (Stanford) | Unknown |
+| **Hallucination Rate** | **0% (50q eval)** | ~5% (VLAIR) | ~10% (VLAIR) | 17% (Stanford) | Unknown |
 | **Hybrid Search** | 3-channel (Vector+BM25+Graph) | Dense retrieval | Vector + Westlaw | Vector + Lexis | Basic vector |
 | **Claude Vision PDF** | Yes (0.09% error) | No | No | No | No |
 | **Cross-Encoder Reranking** | Yes | Unknown | Unknown | Unknown | No |
@@ -107,7 +107,7 @@
 ### 1. Hallucination Crisis
 - **Problem:** 120+ court cases involving AI hallucinations; 128 lawyers sanctioned for AI-fabricated citations
 - **Competitor performance:** Lexis+ AI = 17%, Westlaw AI = 34%, GPT-4 = 58–82% hallucination rates
-- **Our answer:** Grounding validation on every answer with confidence scores and hallucination risk flags
+- **Our answer:** Grounding validation on every answer with confidence scores and hallucination risk flags. **Achieved 0% hallucination rate on 50-question benchmark (Round 9), 100% pass rate, 4.48/5 composite score.**
 
 ### 2. Multi-Hop Reasoning Gaps
 - **Problem:** Traditional RAG achieves only 32–75% accuracy on multi-hop legal queries

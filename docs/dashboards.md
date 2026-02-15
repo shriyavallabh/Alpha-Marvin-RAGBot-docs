@@ -1,7 +1,7 @@
 # Dashboard Inventory
 
 **Product:** Alpha Marvin / JurisAgent
-**Last Updated:** February 7, 2026
+**Last Updated:** February 15, 2026
 **Owner:** Vallabh Pethkar
 
 This document provides an honest accounting of what dashboard capabilities exist today, what they do not yet show, and when gaps are planned to be addressed.
@@ -105,11 +105,11 @@ All counts are scoped to the current tenant (tenant_id filtering).
 <span style="font-size:11px;color:#22c55e;display:flex;align-items:center;gap:3px;"><span style="width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;"></span> Improving</span>
 </div>
 <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
-<span style="font-size:22px;font-weight:800;color:#1a1a1a;">94.2%</span>
-<span style="font-size:11px;color:#22c55e;">+18%</span>
-<span style="font-size:11px;color:#6b7280;">vs last month</span>
+<span style="font-size:22px;font-weight:800;color:#1a1a1a;">100%</span>
+<span style="font-size:11px;color:#22c55e;">4.48/5 composite</span>
+<span style="font-size:11px;color:#6b7280;">Round 9 evaluation</span>
 </div>
-<div style="font-size:11px;color:#6b7280;">Based on 50-question benchmark evaluation</div>
+<div style="font-size:11px;color:#6b7280;">50-question benchmark, 12 perfect scores</div>
 </div>
 
 <div style="background:#ffffff;border-radius:12px;padding:16px;border:1px solid #e8e8e8;">
@@ -134,14 +134,14 @@ All counts are scoped to the current tenant (tenant_id filtering).
 
 ### What It Does NOT Show
 
-| Gap | Priority | Target |
-|-----|----------|--------|
-| Invite management (create, view pending) | HIGH | Feb 10 |
-| User list with roles | MEDIUM | Feb 12 |
-| Document ingestion status/progress | MEDIUM | Feb 12 |
-| Query volume over time (chart) | LOW | Phase 3 |
-| Storage usage breakdown | LOW | Phase 3 |
-| System health indicators (service status) | LOW | Phase 3 |
+| Gap | Priority | Target | Status |
+|-----|----------|--------|--------|
+| Invite management (create, view pending) | HIGH | Feb 10 | Built (backend API) |
+| User list with roles | MEDIUM | Feb 12 | Built (backend API) |
+| Document ingestion status/progress | MEDIUM | Feb 12 | Built (SSE progress) |
+| Query volume over time (chart) | LOW | Phase 3 | Planned |
+| Storage usage breakdown | LOW | Phase 3 | Planned |
+| System health indicators (service status) | LOW | Phase 3 | Planned |
 
 ### Planned Enhancement
 

@@ -3,15 +3,18 @@
 **Product:** Alpha Marvin / JurisAgent
 **Phase:** Phase 2 — JurisAgent Basic
 **Tagline:** Grounded truth, simplified.
-**Last Updated:** February 7, 2026
+**Last Updated:** February 15, 2026
 **Owner:** Vallabh Pethkar
 
 This document describes each Phase 2 feature in business language: what it does, how it works, what it depends on, and what it cannot do.
 
 !!! note "At a Glance"
-    8 features — all built and operational. Document upload with 9-stage AI pipeline,
+    12 features — all built and operational. Document upload with 9-stage AI pipeline,
     natural language Q&A, citation-backed answers, hallucination prevention with
-    GREEN/YELLOW/RED confidence scoring, admin dashboard, and conversation history.
+    GREEN/YELLOW/RED confidence scoring, admin dashboard, conversation history,
+    OCR text cleanup, auto document filtering, Bluebook citation formatting, and
+    analysis playbooks (contract review, due diligence, regulatory analysis).
+    Validated through 9 rounds of benchmark evaluation — 100% pass rate, 4.48/5 composite score.
 
 ---
 
@@ -294,7 +297,7 @@ User verifies the citation is accurate
 - Citations reference chunks, not exact page numbers (a chunk may span pages 4-5)
 - Citation quality depends on chunking — if a clause was split across chunks, the citation may show only part of it
 - No deep-link to a specific page in the original PDF (text-based source viewer only)
-- Benchmark result: citation quality scored 2.95/5 in LLM judge evaluation — this is an active improvement area
+- Benchmark result: citation quality scored **4.78/5** in Round 9 LLM judge evaluation (improved from 2.95/5 through 9 rounds of iterative fixes)
 
 ---
 
@@ -358,27 +361,36 @@ Grounding Validation
         │
         ▼
 Confidence Score calculated (0.0 to 1.0)
+Hallucination Risk assessed (LOW / MEDIUM / HIGH)
         │
         ▼
-Classification:
+Classification (considers BOTH confidence + risk):
         │
-        ├─► GREEN  (confidence >= 0.7)
-        │   "High confidence — answer is well-grounded"
+        ├─► GREEN  (confidence >= 0.75 + LOW risk)
+        │          (confidence >= 0.80 + MEDIUM risk)
+        │   "High Confidence"
         │
-        ├─► YELLOW (confidence >= 0.4)
-        │   "Medium confidence — some claims may lack
-        │    full source support"
+        ├─► YELLOW (confidence >= 0.50 + LOW/MEDIUM risk)
+        │          (confidence >= 0.65 + HIGH risk)
+        │   "Moderate — Verify Sources"
         │
-        └─► RED    (confidence < 0.4)
-            "Low confidence — answer may contain
-             unsupported claims, verify carefully"
+        └─► RED    (everything else)
+            "Low Confidence — consult an attorney"
         │
         ▼
-Displayed to user as:
+If HIGH risk detected:
+        │  Answer is automatically regenerated with
+        │  stricter prompt (up to 3 attempts)
         │
-        │  Confidence: ████████░░ HIGH (0.92)  [GREEN]
-        │  Hallucination Risk: LOW
-        │  Grounded: Yes
+        ▼
+Displayed to user as color-coded badge:
+        │
+        │  [GREEN]  High Confidence
+        │  [YELLOW] Moderate — Verify Sources
+        │  [RED]    Low Confidence — Attorney Review Recommended
+        │
+        │  (Raw percentage is NOT shown to avoid
+        │   false precision for legal users)
 ```
 
 ### Prerequisites
@@ -640,6 +652,128 @@ the AI's interpretation is accurate
 - Chunk text may be truncated if it spans a chunk boundary
 - No ability to download or view the original PDF page
 - Source viewer opens in a panel alongside the chat — not a full-page view
+
+---
+
+---
+
+## 9. OCR Text Cleanup
+
+### What It Does
+
+When scanned PDFs are processed through Vision OCR, the extracted text can contain artifacts — split words, hyphenation errors, garbled characters, and unicode issues. The OCR text cleanup pipeline automatically fixes these before the text is chunked and embedded, improving retrieval accuracy.
+
+### Process Flow
+
+```
+After PDF parsing (Stage 1), before deduplication (Stage 2):
+        │
+        ▼
+Pass 1: DEHYPHENATION
+        │  Rejoin words split by line-ending hyphens
+        │  "termi-\nnation" → "termination"
+        │
+        ▼
+Pass 2: SPLIT-WORD JOIN
+        │  Sliding window (5→4→3→2 char fragments)
+        │  Joins if result is a dictionary word
+        │  "li abilities" → "liabilities"
+        │  "termi nation" → "termination"
+        │
+        ▼
+Pass 3: CHARACTER FIXES
+        │  Common OCR character substitutions
+        │  "rn" → "m", "cl" → "d", etc.
+        │
+        ▼
+Pass 4: UNICODE NORMALIZATION
+        │  Standardize smart quotes, dashes, whitespace
+        │
+        ▼
+Cleaned text proceeds to deduplication and chunking
+```
+
+### Key Details
+
+- Dictionary: NLTK words (~236K) + inflections (~700K total) + ~275 legal terms and Latin phrases
+- Fragment threshold: 5+ characters (catches "ation", "ering", "trigg")
+- Tiny non-standalone exception: 2-char fragments like "li" are not standalone words → allows joining "li abilities" → "liabilities"
+- 31 unit tests validate the cleaner
+- Reclean script (`scripts/reclean_qdrant.py`) can re-process existing Qdrant chunks
+
+### Impact
+
+After running the OCR reclean on existing data, 2,101 of 5,369 chunks (39.1%) had improved text quality, which directly contributed to better retrieval accuracy in benchmark evaluations.
+
+---
+
+## 10. Auto Document Filtering
+
+### What It Does
+
+When a user asks a question that references a specific document (e.g., "What are the termination clauses in the TTG Agreement?"), the system automatically detects this and scopes the search to that document only. This prevents cross-document contamination where facts from different documents get blended.
+
+### Process Flow
+
+```
+User asks: "What are the liabilities in the ACE contract?"
+        │
+        ▼
+Regex Detection
+        │  Pattern matches: "in the ____ contract/agreement/document"
+        │  Detects: doc-specific query
+        │
+        ▼
+LLM Document Reference Extraction
+        │  Claude extracts the document reference: "ACE contract"
+        │
+        ▼
+Document Matching
+        │  Embedding search against document titles
+        │  + Title word-overlap scoring (70% title + 30% retrieval count)
+        │  Threshold: 0.3 minimum match score
+        │
+        ▼
+Scoped Search
+        │  All retrieval channels (Vector, Synonym, Graph)
+        │  are filtered to document_id of matched document
+        │
+        ▼
+Answer references only the specified document
+```
+
+### Impact
+
+Before auto document filtering, 2 of 50 benchmark questions failed due to cross-document contamination (mixing facts from Vol. I and Vol. II of depositions, or from different witness lists). After implementation, both passed.
+
+---
+
+## 11. Bluebook Citation Formatting
+
+### What It Does
+
+Citations in answers are automatically formatted according to Bluebook style — the standard citation format used in legal practice. The system detects the document type (contract, case law, regulation, deposition) and applies the appropriate citation format.
+
+### Example
+
+Instead of: `[Source 1: QAMAR_003092.pdf, Page 5]`
+Produces: `[Source 1: QAMAR 003092, at 5]` (for legal documents)
+
+---
+
+## 12. Analysis Playbooks
+
+### What It Does
+
+Reusable analysis frameworks that apply structured analytical approaches to uploaded documents. Three playbooks are available:
+
+| Playbook | Purpose | Key Outputs |
+|----------|---------|-------------|
+| **Contract Review** | Systematic contract analysis | Key terms, obligations, risks, missing clauses |
+| **Due Diligence** | Data room document review | Red flags, compliance gaps, entity relationships |
+| **Regulatory Analysis** | Regulatory compliance check | Applicable requirements, compliance status, gaps |
+
+Playbooks extend the base Q&A engine with domain-specific prompts and structured output templates.
 
 ---
 

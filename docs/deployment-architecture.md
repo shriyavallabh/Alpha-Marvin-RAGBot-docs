@@ -2,7 +2,7 @@
 
 **Product:** Alpha Marvin / JurisAgent
 **Deployment Model:** SaaS (Cloud-Hosted)
-**Last Updated:** February 7, 2026
+**Last Updated:** February 15, 2026
 **Owner:** Vallabh Pethkar
 
 ---
@@ -177,8 +177,11 @@ Step 4: VALIDATION
                           is_grounded: true/false
                                     │
                                     ▼
-                          Color-coded Confidence
-                          GREEN (≥0.7) / YELLOW (≥0.4) / RED (<0.4)
+                          Color-coded Confidence Badge
+                          GREEN  (≥0.75+LOW or ≥0.80+MEDIUM)
+                          YELLOW (≥0.50+LOW/MED or ≥0.65+HIGH)
+                          RED    (everything else)
+                          (Raw % not shown to user)
 ```
 
 ---
@@ -221,12 +224,15 @@ Step 4: VALIDATION
 | 84 documents ingested | DEV | 8 | Feb 5 | Ingestion pipeline | DONE |
 | 1308-question benchmark generated | DEV | 6 | Feb 5 | Documents ingested | DONE |
 | Benchmark evaluation (API mode) | DEV | 4 | Feb 6 | Benchmark ready | DONE |
-| Admin module completion | DEV | 8 | Feb 10 | Auth working | IN PROGRESS |
-| Accept invite endpoint | DEV | 3 | Feb 10 | Invite model | PLANNED |
-| User management endpoints | DEV | 6 | Feb 12 | Auth + DB models | PLANNED |
-| PM review and feedback | PM | 2 | Feb 9 | Docs site live | IN PROGRESS |
-| Bug fixes from PM feedback | DEV | 8 | Feb 13 | PM review | PLANNED |
-| Beta acceptance sign-off | PM | 2 | Feb 15 | All above | PLANNED |
+| Admin module completion | DEV | 8 | Feb 10 | Auth working | DONE |
+| Accept invite endpoint | DEV | 3 | Feb 10 | Invite model | DONE |
+| User management endpoints | DEV | 6 | Feb 12 | Auth + DB models | DONE |
+| PM review and feedback | PM | 2 | Feb 9 | Docs site live | DONE |
+| Bug fixes from PM feedback | DEV | 8 | Feb 13 | PM review | DONE |
+| OCR text cleanup + Qdrant reclean | DEV | 12 | Feb 11 | Evaluation results | DONE |
+| Grounding calibration (9 rounds) | DEV | 16 | Feb 14 | OCR cleanup | DONE |
+| SSE protocol fix | DEV | 6 | Feb 12 | E2E testing | DONE |
+| Beta acceptance sign-off | PM | 2 | Feb 15 | All above | DONE |
 
 ---
 

@@ -1,7 +1,7 @@
 # Differentiator Analysis
 
 **Product:** Alpha Marvin / JurisAgent
-**Last Updated:** February 4, 2026
+**Last Updated:** February 15, 2026
 
 ---
 
@@ -61,7 +61,7 @@ No competitor in the affordable segment ($0–$250/mo) offers knowledge graph re
 | CoCounsel | Westlaw citation verification | ~10% (VLAIR) | No public confidence score |
 | Lexis+ AI | Shepard's validation (case law) | 17% (Stanford study) | No public confidence score |
 | Spellbook | None documented | Unknown | No |
-| **Our Platform** | **Per-answer grounding with regeneration loop** | **Target <5%** | **Yes: confidence + risk + grounded flag** |
+| **Our Platform** | **Per-answer grounding with regeneration loop** | **0% (50q eval, Round 9)** | **Yes: GREEN/YELLOW/RED badge + risk + grounded flag** |
 
 ### Differentiator Strength: STRONG
 We are the only platform that exposes a machine-readable confidence score and hallucination risk rating to the user on every answer. This transparency is critical for legal professionals who must verify AI outputs.

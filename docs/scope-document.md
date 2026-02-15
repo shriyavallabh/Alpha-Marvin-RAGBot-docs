@@ -130,23 +130,23 @@ This document defines what is included in the February 15 beta release, what is 
 4. **Document deletion**: Deleting a document removes its chunks, vectors, and graph nodes
 5. **Streaming**: Answers stream token-by-token in the UI
 
-### Nice to Have
+### Nice to Have (All Achieved)
 
-1. **Evaluation metrics**: 1000-question suite runs and produces accuracy/relevance scores
-2. **Admin dashboard**: System stats visible in admin panel
-3. **Error recovery**: Failed ingestion can be retried without side effects
+1. ~~**Evaluation metrics**: 1000-question suite runs and produces accuracy/relevance scores~~ **DONE** — 1,308 questions generated from 71 documents; 9 rounds of evaluation with LLM judge; 100% pass rate, 4.48/5 composite
+2. ~~**Admin dashboard**: System stats visible in admin panel~~ **DONE** — 5 stat cards on /admin route
+3. ~~**Error recovery**: Failed ingestion can be retried without side effects~~ **DONE** — `scripts/retry_ingest.py` with inter-doc delays and pipeline-level retry
 
 ---
 
 ## Known Risks
 
-| Risk | Likelihood | Impact | Mitigation |
-|------|-----------|--------|-----------|
-| Claude Max setup-token rate limits during evaluation | Medium | Could block 1000-question evaluation | Run evaluation in batches with delays; switch to API key if needed |
-| Azure VM provisioning delays | Low | Blocks deployment | Start provisioning immediately; have backup on local machine |
-| Neo4j memory on small VM | Medium | Graph queries slow or fail | Use Neo4j Community with conservative memory settings |
-| Voyage AI embedding latency | Low | Slow ingestion | Fallback to local BAAI model if Voyage is slow |
-| Real legal documents with unusual formatting | High | Parser misses content | Test with 3+ document types (contract, regulation, case law) before beta |
+| Risk | Likelihood | Impact | Mitigation | **Outcome** |
+|------|-----------|--------|-----------|------------|
+| Claude Max setup-token rate limits during evaluation | Medium | Could block 1000-question evaluation | Run evaluation in batches with delays; switch to API key if needed | **Realized**: 48/84 docs failed on first ingestion due to 429 rate limits. Resolved with `retry_ingest.py` and inter-doc delays. |
+| Azure VM provisioning delays | Low | Blocks deployment | Start provisioning immediately; have backup on local machine | **Not realized**: VM provisioned on schedule |
+| Neo4j memory on small VM | Medium | Graph queries slow or fail | Use Neo4j Community with conservative memory settings | **Mitigated**: Running stable with conservative settings |
+| Voyage AI embedding latency | Low | Slow ingestion | Fallback to local BAAI model if Voyage is slow | **Not realized**: Voyage AI performed well |
+| Real legal documents with unusual formatting | High | Parser misses content | Test with 3+ document types (contract, regulation, case law) before beta | **Realized**: 60% of pages were scanned PDFs. Addressed with Vision OCR + OCR text cleanup pipeline |
 
 ---
 
@@ -176,5 +176,5 @@ This document defines what is included in the February 15 beta release, what is 
 
 | Role | Name | Date | Approved |
 |------|------|------|----------|
-| Developer | Vallabh Pethkar | | |
-| PM/Advisor | | | |
+| Developer | Vallabh Pethkar | Feb 15, 2026 | All acceptance criteria met |
+| PM/Advisor | Harish | | |

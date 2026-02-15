@@ -1,7 +1,7 @@
 # Full User Journey
 
 **Product:** Alpha Marvin / JurisAgent
-**Last Updated:** February 7, 2026
+**Last Updated:** February 15, 2026
 **Owner:** Vallabh Pethkar
 
 This document maps the complete journey for both user types — from first contact to daily usage.

@@ -1,7 +1,7 @@
 # Reference Architecture
 
 **Product:** Alpha Marvin / JurisAgent
-**Last Updated:** February 4, 2026
+**Last Updated:** February 15, 2026
 
 ---
 
@@ -65,10 +65,14 @@
     ┌────┼──────────────────────┐  ┌────────────────┼─────────────┐
     │    ▼  INGESTION PIPELINE  │  │    ▼  QA PIPELINE            │
     │                           │  │                              │
-    │  Stage 1: PDF Parsing     │  │  Step 1: Query Classification│
-    │    └─ Claude Vision OCR   │  │    └─ SIMPLE | MULTI_HOP    │
-    │                           │  │       ENTITY | COMPARATIVE   │
-    │  Stage 2: Deduplication   │  │       OPEN_ENDED            │
+    │  Stage 1: PDF Parsing     │  │  Step 0: Document Filtering  │
+    │    └─ Claude Vision OCR   │  │    └─ Auto-detect doc-      │
+    │    └─ PyMuPDF text-first  │  │       specific queries      │
+    │    └─ OCR Text Cleanup    │  │    └─ Scope search to doc   │
+    │       (dehyphen, split-   │  │                              │
+    │        word join, unicode)│  │  Step 1: Query Classification│
+    │                           │  │    └─ SIMPLE | MULTI_HOP    │
+    │  Stage 2: Deduplication   │  │       ENTITY | COMPARATIVE   │
     │    └─ SHA-256 hash check  │  │                              │
     │                           │  │  Step 2: Query Enrichment    │
     │  Stage 3: Chunking        │  │    └─ Synonym expansion     │
@@ -145,10 +149,11 @@
 User uploads PDF
        │
        ▼
-  ┌─────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-  │  Parse   │───►│  Dedup   │───►│  Chunk   │───►│  Enrich  │
-  │ (Vision) │    │ (SHA-256)│    │ (Legal)  │    │ (Claude) │
-  └─────────┘    └──────────┘    └──────────┘    └──────────┘
+  ┌─────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
+  │  Parse   │───►│  OCR     │───►│  Dedup   │───►│  Chunk   │───►│  Enrich  │
+  │ (Vision/ │    │  Cleanup │    │ (SHA-256)│    │ (Legal)  │    │ (Claude) │
+  │ PyMuPDF) │    │ (4-pass) │    │          │    │          │    │          │
+  └─────────┘    └──────────┘    └──────────┘    └──────────┘    └──────────┘
                                                        │
        ┌───────────────────────────────────────────────┘
        ▼
@@ -318,6 +323,32 @@ User asks question
 | ORM | SQLAlchemy | 2.0+ | Async database access |
 | Knowledge Graph | Neo4j | 5 Community | Entity relationships, multi-hop |
 | PDF Rendering | PyMuPDF | 1.23+ | Page-to-image conversion |
+| OCR Text Cleanup | Custom (NLTK) | — | Dehyphenation, split-word join, unicode fix |
 | Reranking | Cross-Encoder | ms-marco-MiniLM | Result refinement |
 | Containerization | Docker Compose | latest | Service orchestration |
+| LLM Proxy | anthropic-max-router | — | Claude Max token proxy (port 3456) |
 | Cloud | Azure VM | B2s/B2ms | Hosting |
+
+---
+
+## Additional Modules (Built in Phase 2)
+
+| Module | Location | Purpose |
+|--------|----------|---------|
+| OCR Text Cleaner | `backend/ingestion/text_cleaner.py` | 4-pass cleanup for scanned PDF text (dehyphenation, split-word join, char fixes, unicode normalization) |
+| Auto Document Filter | `backend/qa/engine.py` | LLM-based detection and scoping of doc-specific queries |
+| Legal Citations | `backend/qa/legal_citations.py` | Bluebook-style citation formatting based on document type |
+| Playbooks | `backend/qa/playbooks/` | Structured analysis frameworks (contract review, due diligence, regulatory analysis) |
+| Timeline Extraction | `backend/qa/timeline.py` | Extract dates, deadlines, and milestones from documents |
+| Comparison Engine | `backend/qa/comparison.py` | Side-by-side clause comparison across documents |
+| Risk Assessment | `backend/qa/risk_assessment.py` | Document risk analysis with structured output |
+| Grounding Validator | `backend/qa/grounding.py` | Per-answer confidence scoring and hallucination risk rating |
+
+### LLM Retry Mechanism
+
+All LLM API calls include robust retry logic:
+
+- **12 retries** with exponential backoff + jitter
+- Parses `Retry-After` header from rate limit responses
+- Maximum 180-second wait between retries
+- Handles 429 (rate limit) and 500/502/503 (server error) responses

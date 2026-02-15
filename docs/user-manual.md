@@ -2,7 +2,7 @@
 
 **Product:** Alpha Marvin / JurisAgent
 **Audience:** Beta testers (JurisAgent Basic)
-**Last Updated:** February 4, 2026
+**Last Updated:** February 15, 2026
 
 ---
 
@@ -16,7 +16,7 @@
 6. [Conversations](#conversations)
 7. [Interpreting Confidence Scores](#interpreting-confidence-scores)
 8. [Tips for Better Results](#tips-for-better-results)
-9. [Known Limitations](#known-limitations)
+9. [Known Limitations](#known-limitations-beta)
 10. [Reporting Issues](#reporting-issues)
 
 ---
@@ -164,7 +164,7 @@ Sources:
 [Source 2] MSA_AcmeCorp.pdf, Page 12, Section 7.2
 [Source 3] MSA_AcmeCorp.pdf, Page 14, Section 8.3
 
-Confidence: 0.94  |  Hallucination Risk: LOW  |  Grounded: Yes
+Confidence: GREEN  |  High Confidence
 ```
 
 ### Viewing Source Chunks
@@ -223,22 +223,23 @@ Click on a document to see its individual chunks — the text segments that were
 
 ## Interpreting Confidence Scores
 
-### Confidence Score (0.0 – 1.0)
+### Confidence Badge
 
-| Range | Meaning | Action |
+Answers display a color-coded confidence badge (raw percentage is intentionally hidden to avoid false precision in legal contexts):
+
+| Badge | Meaning | Action |
 |-------|---------|--------|
-| 0.90 – 1.00 | High confidence — answer is well-supported by sources | Use with confidence; verify citations for critical decisions |
-| 0.70 – 0.89 | Moderate confidence — most of the answer is supported | Review the sources; some parts may be inferred rather than directly stated |
-| 0.50 – 0.69 | Low confidence — answer may not be fully supported | Treat with caution; manually verify against original documents |
-| Below 0.50 | Very low confidence — answer is likely unreliable | Do not rely on this answer; consult the original documents directly |
+| **GREEN** — High Confidence | Answer is well-supported by source documents with low hallucination risk | Use with confidence; verify citations for critical decisions |
+| **YELLOW** — Moderate | Most of the answer is supported but some claims may need verification | Review the cited sources carefully; some parts may be inferred |
+| **RED** — Low Confidence | Insufficient source support or high hallucination risk detected | Do not rely on this answer alone; consult the original documents and consider attorney review |
 
-### Hallucination Risk Rating
+### How Confidence is Determined
 
-| Rating | Meaning |
-|--------|---------|
-| **LOW** | Answer is well-grounded in the source documents |
-| **MEDIUM** | Some claims may not be directly supported; review recommended |
-| **HIGH** | Significant risk of unsupported claims; manual verification required |
+The system considers both the **confidence score** (0.0–1.0) and the **hallucination risk** (LOW/MEDIUM/HIGH) together:
+
+- **GREEN**: confidence >= 0.75 with LOW risk, or >= 0.80 with MEDIUM risk
+- **YELLOW**: confidence >= 0.50 with LOW/MEDIUM risk, or >= 0.65 with HIGH risk
+- **RED**: everything below these thresholds
 
 ### What Happens When Risk Is High
 
@@ -281,9 +282,9 @@ If the system detects high hallucination risk:
 - The source viewer shows the exact text that supports the answer
 
 ### 7. Watch the Confidence Score
-- High confidence (>0.9) means the answer is well-grounded
-- Low confidence (<0.7) means you should verify manually
-- The system will warn you about high hallucination risk
+- GREEN badge means the answer is well-grounded — verify citations for critical decisions
+- YELLOW badge means some claims may need verification — review cited sources
+- RED badge means attorney review is recommended — do not rely solely on this answer
 
 ---
 

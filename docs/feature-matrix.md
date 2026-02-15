@@ -1,7 +1,7 @@
 # Feature Matrix
 
 **Product:** Alpha Marvin / JurisAgent
-**Last Updated:** February 4, 2026
+**Last Updated:** February 15, 2026
 
 ---
 
@@ -49,6 +49,8 @@
 | Dual embedding generation | BUILT | FREE | Voyage AI (1024d) + BAAI fallback (384d) |
 | Table extraction | BUILT | FREE | Via Claude Vision rendering |
 | Section hierarchy preservation | BUILT | FREE | Nested headings tracked in metadata |
+| OCR text cleanup | BUILT | FREE | 4-pass cleanup: dehyphenation, split-word join, char fixes, unicode normalization |
+| Auto document filtering | BUILT | FREE | LLM-based scoping of queries to specific documents |
 | Custom chunking rules | PLANNED | ENTERPRISE | User-defined split points per document type |
 | Language detection | DEFERRED | PAID | Auto-detect document language |
 | Multi-language support | DEFERRED | ENTERPRISE | Non-English document processing |
@@ -81,7 +83,12 @@
 | Multi-turn conversations | BUILT | FREE | Context preserved across questions |
 | Conversation history | BUILT | FREE | Browse and resume past conversations |
 | Source chunk viewer | BUILT | FREE | View exact text that supports each citation |
-| Answer regeneration | BUILT | FREE | Re-generate if grounding is low |
+| Answer regeneration | BUILT | FREE | Re-generate if grounding is low (up to 3 attempts) |
+| Bluebook citation formatting | BUILT | FREE | Legal citation formatting per Bluebook style |
+| Analysis playbooks | BUILT | FREE | Contract review, due diligence, regulatory analysis |
+| Timeline extraction | BUILT | FREE | Extract dates, deadlines, milestones |
+| Cross-document comparison | BUILT | FREE | Side-by-side clause analysis |
+| Risk assessment | BUILT | FREE | Document risk analysis with structured output |
 | Answer export (copy/share) | PLANNED | FREE | Copy answer with citations |
 | Answer comparison | PLANNED | PAID | Compare answers from different document sets |
 
@@ -123,7 +130,9 @@
 | Document upload with drag-drop | BUILT | FREE | Progress indicators |
 | Document management sidebar | BUILT | FREE | List, delete uploaded documents |
 | Source viewer | BUILT | FREE | View cited chunks |
-| Confidence indicator | BUILT | FREE | Visual hallucination risk display |
+| Confidence badge (GREEN/YELLOW/RED) | BUILT | FREE | Color-coded confidence label (raw % hidden) |
+| Pipeline progress stepper | BUILT | FREE | Real-time stage indicator during Q&A |
+| Citation pills | BUILT | FREE | Clickable [Source N] references |
 | Markdown rendering | BUILT | FREE | Formatted answers with headers, lists |
 | Conversation sidebar | BUILT | FREE | Browse conversation history |
 | Settings page | BUILT | FREE | User preferences |
@@ -180,7 +189,7 @@
 | Unit tests (pytest) | BUILT | N/A | 42/42 passing |
 | BDD tests (pytest-bdd) | BUILT | N/A | Feature-level testing |
 | API endpoint tests | BUILT | N/A | Full endpoint coverage |
-| 1000-question evaluation suite | PLANNED | N/A | Accuracy/relevance/citation metrics |
+| 1308-question evaluation suite | BUILT | N/A | 1,308 questions from 71 docs; 9 rounds of LLM judge evaluation; 100% pass rate, 4.48/5 composite |
 | Automated evaluation runner | BUILT | N/A | Batch processing with metrics |
 | LLM call mocking | BUILT | N/A | Tests never hit real API |
 
